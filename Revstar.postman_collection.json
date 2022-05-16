@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "a64efd24-2bc4-4017-9807-4195d67cb686",
+		"name": "Revstar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/user",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gabriel\",\r\n    \"email\": \"gaboz223xc@gmail.com\",\r\n    \"password\": \"171299\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "\"soy admin 3\"",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"gabozxc@gmail.com\",\r\n    \"password\": \"1721299\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "\"soy admin 3\"",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2QyNDk5ZGRkYTUyZGNiZjM5OWFmNCIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJpYXQiOjE2NTIzNzA1MTEsImV4cCI6MTY1MjM5OTMxMX0.ZQbQ-CIRlugqJvxRHRfytqGBt-WFykr9IIyQOlzWy2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api/invoice",
+			"item": [
+				{
+					"name": "Create invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2QyNDk5ZGRkYTUyZGNiZjM5OWFmNCIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJlbWFpbCI6ImVtcGVyYWRvckBkb2pvcHkuY29tIiwiaWF0IjoxNjUyNDMxNTE2LCJleHAiOjE2NTI0NjAzMTZ9._yKYDekQrwmzE3mSY06nlS_M9MTN8-broz3HqOdVi54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"627d2499ddda52dcbf399af4\",\r\n    \"title\": \"compras mes agosto\",\r\n    \"articulos\": [ {\"nombre\": \"casca\", \"cantidad\": 5, \"valor\": 2.00, \"valorTotal\":10.00, \"iva\":100, \"ivaTotal\": 10.00, \"precioFinal\": 20.00}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2UzNWJmNWNmZTk4NGI4YjU4YzUxYSIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJlbWFpbCI6ImVtcGVyYWRvcjJAZG9qb3B5LmNvbSIsImlhdCI6MTY1MjQzODQ2OSwiZXhwIjoxNjUyNDY3MjY5fQ.ZwxDOmqzGLPHak2I96tr29tT8UBwPvjhxLqxwe9b2RA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"casa roja\",\r\n    \"pagado\": \"true\",\r\n    \"articulos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/invoice?id=627e436c27c66d3adc18819f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "627e436c27c66d3adc18819f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2QyNDk5ZGRkYTUyZGNiZjM5OWFmNCIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJlbWFpbCI6ImVtcGVyYWRvckBkb2pvcHkuY29tIiwiaWF0IjoxNjUyNDc0NDc5LCJleHAiOjE2NTI1MDMyNzl9.Grk94fAUPGqvL99QczuYY5paFHXKwHlTI3lvoejigDQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/invoice?id=627e436c27c66d3adc18819f&userId=627d2499ddda52dcbf399af4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "627e436c27c66d3adc18819f"
+								},
+								{
+									"key": "userId",
+									"value": "627d2499ddda52dcbf399af4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/invoice?filter=true&invoiceTitle=&invoiceValue=2&invoiceVat=&invoicePaid=false&invoiceItems=\"4\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "true"
+								},
+								{
+									"key": "invoiceId",
+									"value": "62804d0d8d75d1db622933a3",
+									"disabled": true
+								},
+								{
+									"key": "invoiceTitle",
+									"value": ""
+								},
+								{
+									"key": "invoiceValue",
+									"value": "2"
+								},
+								{
+									"key": "invoiceVat",
+									"value": ""
+								},
+								{
+									"key": "invoicePaid",
+									"value": "false"
+								},
+								{
+									"key": "invoiceItems",
+									"value": "\"4\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api/articulo",
+			"item": [
+				{
+					"name": "Update articulo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2JmMzBiZTE5ZTEzMTQ0NzE2YTU1ZiIsIm5vbWJyZSI6ImdhYnJpZWwiLCJpYXQiOjE2NTIzMDA2MTgsImV4cCI6MTY1MjMyOTQxOH0.0BOZIKqwQhNG3lSFAjJOx5_LxmPUmCurhTxoZe2d6y0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"627c0941677b05117b124f65\",\r\n    \"facturaId\": \"627c0941677b05117b124f64\",\r\n    \"iva\": \"16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/articulo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"articulo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articulos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2QyNDk5ZGRkYTUyZGNiZjM5OWFmNCIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJlbWFpbCI6ImVtcGVyYWRvckBkb2pvcHkuY29tIiwiaWF0IjoxNjUyNDMxNTE2LCJleHAiOjE2NTI0NjAzMTZ9._yKYDekQrwmzE3mSY06nlS_M9MTN8-broz3HqOdVi54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/articulo?facturaId=627e248aea3d1053fd0871b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"articulo"
+							],
+							"query": [
+								{
+									"key": "facturaId",
+									"value": "627e248aea3d1053fd0871b7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Articulos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2VkMmVjMjkzYTI3YTViZmY1MmI5MiIsIm5vbWJyZSI6IkdhYnJpZWwgQWxlamFuZHJvIERvcyBTYW50b3MiLCJlbWFpbCI6ImVtcGVyYWRvcjRAZG9qb3B5LmNvbSIsImlhdCI6MTY1MjU2MTEyNSwiZXhwIjoxNjUyNTg5OTI1fQ.p9PDE-6tokeF7z96twtH6hP84MvH6oI4iIvgdIAzRBk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/articulo?itemId=627e248aea3d1053fd0871b7&userId=asdasdsad&invoiceId=asdsadasd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"articulo"
+							],
+							"query": [
+								{
+									"key": "itemId",
+									"value": "627e248aea3d1053fd0871b7"
+								},
+								{
+									"key": "userId",
+									"value": "asdasdsad"
+								},
+								{
+									"key": "invoiceId",
+									"value": "asdsadasd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Articulo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/articulo?filter=true&name=&valorTotal=200&ivaTotal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"articulo"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "true"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "valorTotal",
+									"value": "200"
+								},
+								{
+									"key": "ivaTotal",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
