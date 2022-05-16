@@ -10,7 +10,7 @@ El servidor fue desplegado en heroku y el frontend en vercel.
 
 Mi enfoque general fue en la creacion y consumo del servicio, no me enfoque en el desarrollo UI/EX.
 
-Aplicacion: https://invoice-front.vercel.app/
+Frontend: https://invoice-front.vercel.app/
 
 Imagen adjunta de la estructura del proyecto:
  
