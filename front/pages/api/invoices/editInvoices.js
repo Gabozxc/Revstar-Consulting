@@ -23,7 +23,7 @@ export default async function editInvoices(req, res) {
     invoice.articulos = invoiceReset;
 
     try {
-        const newInvoice = await axiosInstance.put(`api/invoice?id=${invoice.id}`, invoice);
+        const newInvoice = await axiosInstance.put(`/api/invoice?id=${invoice.id}`, invoice);
         return res.status(200).json(newInvoice.data);
     } catch (err) {
         console.log(err)

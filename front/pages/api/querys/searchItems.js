@@ -5,7 +5,7 @@ export default async function searchItems(req, res) {
     const { invoice } = req.body;
 
     try {
-        const items = await axiosInstance.get(`http://localhost:8000/api/articulo`, {
+        const items = await axiosInstance.get(`/api/articulo`, {
             params:{
                 filter: true,
                 name: invoice.invoiceTitle,
