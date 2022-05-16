@@ -23,6 +23,6 @@ Imagen adjunta de la estructura del proyecto:
  
  # Documentacion 
  
- La aplicación fue documentada con <a href="./Revstar.postman_collection.json"/>postman</a> donde esta registrada todos los procedimientos y metodos para acceder a los recursos que se necesiten.
+ El servicio fue documentado con <a href="./Revstar.postman_collection.json"/>postman</a> donde esta registrada todos los procedimientos y metodos para acceder a los recursos que se necesiten.
 
  <img src="./postman estructura.PNG" />
