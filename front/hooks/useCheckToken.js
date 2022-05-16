@@ -8,7 +8,7 @@ const useCheckToken = () => {
 
   useEffect(() => {
     dispatch(CheckToken());
-  }, []);
+  }, [dispatch]);
 
 };
 

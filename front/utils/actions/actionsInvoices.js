@@ -24,7 +24,7 @@ import {
   SEARCHING_INVOICE_FAILURE,
   SEARCHING_ITEMS,
   SEARCHING_ITEMS_SUCCESS,
-  SSEARCHING_ITEMS_FAILURE,
+  SEARCHING_ITEMS_FAILURE,
 } from "../types/invoicesTypes.js";
 
 export const getAllInvoices = () => {
@@ -32,6 +32,7 @@ export const getAllInvoices = () => {
     dispatch(getInvoices());
     try {
       const AllInvoices = await axios.post('/api/invoices/getAllInvoices');
+      localStorage.setItem("invoices", JSON.stringify(AllInvoices.data.invoices));
       return dispatch(getInvoicesSuccess(AllInvoices.data.invoices));
     } catch (err) {
       console.log(err)
@@ -227,7 +228,7 @@ export const SearchItem = (invoice) => {
       return dispatch(searchingItemsSuccess(searchItems.data.items));
     } catch (err) {
       console.log(err)
-      return dispatch(searchingInvoiceFailure(err.response));
+      return dispatch(searchingItemsFailure(err.response));
     }
   }
 }
@@ -239,4 +240,9 @@ const searchingItems = () => ({
 const searchingItemsSuccess = (items) => ({
   type: SEARCHING_ITEMS_SUCCESS,
   payload: items,
+})
+
+const searchingItemsFailure = (data) => ({
+  type: SEARCHING_ITEMS_FAILURE,
+  payload: data,
 })

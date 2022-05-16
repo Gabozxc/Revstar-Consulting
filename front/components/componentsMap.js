@@ -1,4 +1,4 @@
-export {default as Layout } from './layouts/layout';
+export {default as Layout } from './layouts/Layout';
 
 
 export {default as Spinner } from "./common/Spinner"

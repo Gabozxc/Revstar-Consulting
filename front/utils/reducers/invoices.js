@@ -22,7 +22,7 @@ import {
   SEARCHING_INVOICE_FAILURE,
   SEARCHING_ITEMS,
   SEARCHING_ITEMS_SUCCESS,
-  SSEARCHING_ITEMS_FAILURE,
+  SEARCHING_ITEMS_FAILURE,
   CLEAN_ALERT
 } from "../types/invoicesTypes";
 
@@ -144,6 +144,7 @@ const invoices = (state = initialState, action) => {
         searching: false,
         invoicesSearch: action.payload,
       };
+    case SEARCHING_ITEMS_FAILURE:
     case SEARCHING_INVOICE_FAILURE:
       return {
         ...state,

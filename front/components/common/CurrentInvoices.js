@@ -1,21 +1,24 @@
+import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Spinner from "./Spinner"
 import { getArticles, DeleteArticles } from "../actionsMap"
 
-const CurrentInvoices = ({ invoiceId, owner, userId }) => {
+const CurrentInvoices = ({ owner, userId }) => {
 
-    const [donwloadData, setLoading] = useState(false)
+    const router = useRouter()
+    const invoiceId = router.query.id;
+    const [donwloadData, setLoading] = useState(true)
     const dispatch = useDispatch();
     const { currentArticles, loading } = useSelector(state => state.invoices);
 
     useEffect(() => {
-        setLoading(true)
         if (donwloadData) {
             dispatch(getArticles(invoiceId));
+            setLoading(false)
         }
-    }, [donwloadData])
+    }, [donwloadData, dispatch, invoiceId])
     
     const deleteItem = (id) => {
         dispatch(DeleteArticles({id, userId, invoiceId}))

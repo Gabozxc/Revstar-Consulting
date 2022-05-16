@@ -6,23 +6,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { CheckToken } from '../components/actionsMap';
 import { Layout, FormAddInvoices } from '../components/componentsMap'
 
-const addInvoice = () => {
+const AddInvoice = () => {
 
   const router = useRouter();
   const dispatch = useDispatch()
   const { token } = useSelector(state => state.user);
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
     if(loading){
       dispatch(CheckToken)
+      setLoading(false)
     }
     if(!token){
       router.push('/login');
     }
-  } , [token]);
+  } , [token, loading, dispatch, router]);
 
     return (
         <Layout title="casa">
@@ -34,4 +34,4 @@ const addInvoice = () => {
       )
 }
  
-export default addInvoice;
+export default AddInvoice;
