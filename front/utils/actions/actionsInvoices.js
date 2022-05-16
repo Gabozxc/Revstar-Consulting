@@ -32,7 +32,6 @@ export const getAllInvoices = () => {
     dispatch(getInvoices());
     try {
       const AllInvoices = await axios.post('/api/invoices/getAllInvoices');
-      localStorage.setItem("invoices", JSON.stringify(AllInvoices.data.invoices));
       return dispatch(getInvoicesSuccess(AllInvoices.data.invoices));
     } catch (err) {
       console.log(err)
