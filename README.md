@@ -20,7 +20,7 @@ Imagen adjunta de la estructura del proyecto:
  
  La aplicacion fue documentada con postman donde esta registrada todos los procedimientos y metodos para acceder a los recursos que se necesiten
 
- 
+ <img src="./postman estructura" />
  
  
  
