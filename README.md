@@ -7,6 +7,8 @@
  para comunicarse con el servidor y consumir los recursos necesarios, el servidor corre con Nodejs, usando Prisma como ORM y MongoDB como la base se datos.
  El servidor fue desplegado en heroku y el frontend en vercel.
 
+Aplicacion: https://invoice-front.vercel.app/
+
 Imagen adjunta de la estructura del proyecto:
  
  <img src="./example request.png" />
